@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>HR Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f0f2f5;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        th, td {
+            border: 1px solid #9e15cb;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f399ff;
+        }
+
+        img {
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HR Dashboard</h1>
+
+<p style="text-align: right;">
+    <a href="/logout" style="color: red; text-decoration: none;">Вийти з панелі</a>
+</p>
+
+    <h2>Графік 1: Розподіл настрою працівників</h2>
+    <img src="data:image/png;base64,{{ mood_chart }}"/>
+
+    <h2>Графік 2: Конфлікти в команді</h2>
+    <img src="data:image/png;base64,{{ conflict_chart }}"/>
+
+    <h2>Графік 3: Підтримка з боку керівництва</h2>
+    <img src="data:image/png;base64,{{ support_chart }}"/>
+
+    <h2>Щоденний фідбек</h2>
+    <table>
+        <tr>
+            <th>Ім’я</th>
+            <th>Настрій</th>
+            <th>Коментар</th>
+            <th>Дата</th>
+        </tr>
+        {% for row in daily_rows %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Ідеї та пропозиції працівників за тиждень</h2>
+<table>
+    <tr>
+        <th>Ім’я</th>
+        <th>Пропозиція / Ідея</th>
+        <th>Дата</th>
+    </tr>
+    {% for row in weekly_rows %}
+        {% if row[3]|length > 0 %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+

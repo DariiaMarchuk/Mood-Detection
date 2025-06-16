@@ -1,0 +1,87 @@
+\
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Оцінка настрою працівника</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f0f0f0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Як ти себе почуваєш сьогодні на роботі?</h2>
+
+    <form method="POST">
+        <label>Твоє ім’я або псевдонім:</label>
+        <input type="text" name="username" required placeholder="Наприклад, Андрій або Anon123">
+
+        <label>Обери настрій, який тебе найкраще описує:</label>
+        <select name="mood" required>
+            <option value="">-- Обери настрій --</option>
+            <option value="Енергійно">Енергійно</option>
+            <option value="Спокійно">Спокійно</option>
+            <option value="Нейтрально">Нейтрально</option>
+            <option value="Тривожно">Тривожно</option>
+            <option value="Пригнічено">Пригнічено</option>
+        </select>
+
+        <label>Хочеш поділитися чимось ще?</label>
+        <textarea name="comment" rows="4" placeholder="Напиши будь-що, що має значення для тебе..."></textarea>
+
+        <input type="submit" value="Надіслати">
+    </form>
+
+    <div class="link">
+        <p><a href="/login">Перейти до панелі HR</a>
+    </div>
+</body>
+</html>

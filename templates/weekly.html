@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Щотижневе опитування працівника</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Щотижневе опитування працівника</h2>
+
+    <form method="POST">
+        <label>Твоє ім’я або псевдонім:</label>
+        <input type="text" name="username" required placeholder="Наприклад, Анна або Anon456">
+
+        <label>Чи були у тебе невирішені питання в команді цього тижня?</label>
+        <select name="team_conflict" required>
+            <option value="">-- Оберіть відповідь --</option>
+            <option value="Так">Так</option>
+            <option value="Ні">Ні</option>
+        </select>
+
+        <label>Чи задоволений(-а) підтримкою з боку керівництва?</label>
+        <select name="management_support" required>
+            <option value="">-- Оберіть відповідь --</option>
+            <option value="Так">Так</option>
+            <option value="Ні">Ні</option>
+            <option value="Частково">Частково</option>
+        </select>
+
+        <label>Що покращило б твоє самопочуття на роботі?</label>
+        <textarea name="suggestions" rows="4" placeholder="Поділись своїми думками, ідеями або потребами..."></textarea>
+
+        <input type="submit" value="Надіслати">
+    </form>
+
+    <div class="link">
+        <p><a href="/">Повернутись на щоденне опитування</a></p>
+    </div>
+</body>
+</html>
